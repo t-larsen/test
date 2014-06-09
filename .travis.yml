@@ -1,9 +1,16 @@
 language: python
+
 python:
   - "2.7"
   # does not have headers provided, please ask
   # https://launchpad.net/~pypy/+archive/ppa
   # maintainers to fix their pypy-dev package.
+
+# Install dependencies
+# Need no more than numpy and matplotlib which are expressed dependencies in
+# the package. Matplotlib however fails to automatically install one of its
+# dependency which is thus expressed in our requirements.txt (tornado).
+install: pip install -r requirements.txt
 
 # command to run tests
 script: python run_full_doctest.py
