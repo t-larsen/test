@@ -1,0 +1,16 @@
+# Import function to be tested via doctest
+>>> from fun.mathfun import f
+
+# Import of support modules/packages
+>>> import numpy as np
+
+
+#----------------------------------------------------------------------------
+# Functionality
+#----------------------------------------------------------------------------
+>>> round(f(np.pi/2), 10)
+7.3890560989
+>>> round(f(-np.pi/5), 10)
+1.5101587046
+>>> round(f(1), 10)
+6.3058071887

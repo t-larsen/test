@@ -1,0 +1,44 @@
+# Import function to be tested via doctest
+>>> from warm.tvt import ftvt
+
+
+#----------------------------------------------------------------------------
+# Check input data
+#----------------------------------------------------------------------------
+>>> ftvt(-1)
+Traceback (most recent call last):
+    ...
+ValueError: n must be >= 0
+
+
+# Not OK to use a float as an input if it does not maps to an exact integer:
+>>> ftvt(30.1)
+Traceback (most recent call last):
+    ...
+ValueError: n must be exact integer
+
+# OK to use a float as an input provided it maps to an exact integer
+>>> ftvt(30.0)
+265252859812191058636308480000000L
+
+
+It must also not be ridiculously large:
+>>> ftvt(1E100)
+Traceback (most recent call last):
+    ...
+OverflowError: n too large
+
+
+
+#----------------------------------------------------------------------------
+# Intended function behaviour
+#----------------------------------------------------------------------------
+# With standard input integer
+>>> ftvt(5)
+120
+
+# Sweeping through values
+>>> [ftvt(n) for n in range(6)] # doctest: +ELLIPSIS
+[1, ..., 120]
+
+
