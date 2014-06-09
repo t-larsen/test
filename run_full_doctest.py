@@ -29,7 +29,7 @@ Version:
                             be included in the test.
 License:
     BSD 2-Clause
-
+    
 """
 
 import os
@@ -50,9 +50,7 @@ for (dirpath, dirnames, filenames) in os.walk(path):
         go = filename not in omit_files
         if ext_name in ('py', 'dt') and go:
             full_filename = os.sep.join([dirpath, filename])
-            #disp_str = "File under doctest:   {0}".format(filename)
-            #print("{0}\n{1}".format(disp_str, len(disp_str)*'-'))
             disp_str = "File under doctest:   {0}".format(filename)
-            print("{0}\n".format(disp_str))
+            print("{0}\n{1}".format(disp_str, len(disp_str)*'-'))
             doctest.testfile(full_filename)
             print('{0}'.format(78*'='))
