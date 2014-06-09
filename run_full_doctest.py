@@ -29,7 +29,7 @@ Version:
                             be included in the test.
 License:
     BSD 2-Clause
-    
+
 """
 
 import os
