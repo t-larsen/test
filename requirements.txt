@@ -3,13 +3,13 @@ numpy
 matplotlib
 
 # Required to build documentation.
-#sphinx
+sphinx
 
 # Required for packaging.
 #wheel
 
 # Required for code style checking.
-#flake8
+pep8
 
 # Required for extended testing.
 #tox
